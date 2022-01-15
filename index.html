@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorize</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <header class="header">
+        <span class='header__title'>MEMORIZE</span> - SHARPEN YOUR MEMORY SKILLS!
+    </header>
+    <main class="main">
+        <aside id='stats' class='stats hide'>
+            <ul>
+                <li class='stats__label'>Trials</li>
+                <li id='trials' class='stats__data'>0</li>
+                <li class='stats__label'>Time</li>
+                <li id='timer' class='stats__data'></li>
+            </ul>
+            <button id='back-button' class='back-button'>Back</button>
+        </aside>
+        <div id='tick-container' class="tick-container">
+            <div class="trigger" id='trigger'></div>
+            <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+            <path class="circ path" style="fill:none;stroke:#479416;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" d="
+                M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"
+                />
+            <polyline class="tick path" style="fill:none;stroke:#479416;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                11.6,20 15.9,24.2 26.4,13.8 "/>
+            </svg>
+        </div>
+        <div id='start-page' class="start-page">
+            <button type='button' id='start-button' class='app-button'>Start!</button>
+            <label class="select-level-label">Select level</label>
+            <select id='select-level' class="select-level">
+                <option>Easy</option>
+                <option>Normal</option>
+                <option>Difficult</option>
+                <option>Expert</option>
+                <option>Professional</option>
+            </select>
+        </div>
+        <div id="game-container" class='game-container'>
+        </div>
+        <div id='end-of-game' class="end-of-game">
+            <span class='end-of-game__msg'>You win!!</span>
+            <span class='end-of-game__total-trials'><span id='total-trials'>0</span> trials</span>
+            <button id='try-again' class='app-button'>Try again!</button>
+        </div>
+    </main>    
+    <script src="js/howler.core.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

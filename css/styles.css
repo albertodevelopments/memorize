@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --yellow: #E8e28e;
+    --blue: #386abb;
+    --dark-blue: #1e3b71;
+    --green: #479416;
+}
+
+body{
+    font-family: 'Mochiy Pop P One', sans-serif;
+    background: var(--yellow);
+    color: var(--dark-blue);
+    display: grid;
+    text-align: center;
+    place-items: center;
+    user-select: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+.main{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.end-of-game{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 2rem;
+    transform: translate(-50%, -50%);
+    color: var(--dark-blue);
+    border: 2px solid var(--dark-blue);
+}
+
+.end-of-game__msg{
+    font-size: 100px;
+    font-weight: 600;
+}
+
+.end-of-game__total-trials{
+    font-size: 80px;   
+    margin-bottom: 2rem; 
+}
+
+.stats{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 200px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.stats__label{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.stats__data{
+    font-size: 25px;
+}
+
+.stats ul{
+    padding: 0;
+    list-style: none;
+}
+
+.header{
+    margin: 2rem 0;
+    font-size: 30px;
+}
+
+.header__title{
+    font-size: 40px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.start-page{
+    width: 600px;
+    height: 400px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.select-level{
+    margin-top: 0.5rem;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    padding: 0.5rem 0.25rem;
+    width: 300px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.select-level-label{
+    text-align: start;
+    margin-top: 2rem;
+    width: 300px;
+}
+
+.app-button{
+    width: 300px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    outline: none;
+    border: 3px solid var(--dark-blue);
+    font-size: 40px;
+    transition: all .3s ease-in-out;
+    background-color: var(--blue);
+    color: #ffffff;
+}
+
+.app-button:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+    color: var(--dark-blue);
+}
+
+.back-button{
+    width: 120px;
+    height: 80px;
+    margin-left: 1rem;
+    border-radius: 8px;
+    outline: none;
+    border: 3px solid var(--dark-blue);
+    font-size: 40px;
+    transition: all .3s ease-in-out;
+    background-color: var(--blue);
+    color: #ffffff;
+}
+
+.back-button:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+    color: var(--dark-blue);
+}
+
+.game-container{
+    display: grid;
+    margin-top: 2rem;
+    gap: 15px;
+    width: auto;
+    background: var(--dark-blue);    
+    padding: 15px;    
+}
+
+.few-elements{
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.many-elements{
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.card{
+    border-radius: 8px;
+    background: var(--yellow);
+    font-size: 3rem;
+    position:relative;
+    transform-style: preserve-3d;
+    transition: transform .3s;
+    cursor: pointer;
+}
+
+.card-small{
+    width: 100px;
+    height: 100px;
+}
+
+.card-big{
+    width: 150px;
+    height: 150px;
+}
+
+.rotate{
+    transform: rotateY(180deg);
+}
+
+.card__front,
+.card__back{
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card__front{
+    background: #A2bddc;
+    backface-visibility: visible;
+}
+
+.card__back{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.success{
+    opacity: 0.7
+}
+
+.hide{
+    display: none;
+}
+
+.tick-container{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circ{
+    opacity: 1;
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+.tick{
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    -webkit-transition: stroke-dashoffset 1s 0.5s ease-out;
+    -moz-transition: stroke-dashoffset 1s 0.5s ease-out;
+    -ms-transition: stroke-dashoffset 1s 0.5s ease-out;
+    -o-transition: stroke-dashoffset 1s 0.5s ease-out;
+    transition: stroke-dashoffset 1s 0.5s ease-out;
+}
+
+.drawn + svg .path{
+    opacity: 1;
+    stroke-dashoffset: 0;
+}
