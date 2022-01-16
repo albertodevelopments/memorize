@@ -157,6 +157,7 @@ body{
 
 .game-container{
     display: grid;
+    position: relative;
     margin-top: 2rem;
     gap: 15px;
     width: auto;

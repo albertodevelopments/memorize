@@ -18,6 +18,7 @@ let tryAgainButton
 let selectLevel
 let level
 let backButton
+let successContainer
 
 const init = {
     imagesFour: [],
@@ -33,6 +34,7 @@ const init = {
         selectLevel = document.getElementById('select-level')
         backButton = document.getElementById('back-button')
         gameContainer = document.getElementById('game-container')
+        successContainer = document.getElementById('tick-container')
 
         seconds = 0
         minutes = 0

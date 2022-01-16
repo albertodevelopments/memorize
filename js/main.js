@@ -22,6 +22,7 @@ const main = {
         background.stop()
         background.play()
         cards = []
+        const successContainerTmp = successContainer
         gameContainer.innerHTML = ''
         board.createBoard()
         board.assignBackCardImage()
@@ -35,6 +36,8 @@ const main = {
                 if (main.choosenCards.length < 2) main.clickRotateCard(card)
             })
         }
+
+        gameContainer.appendChild(successContainerTmp)
 
         startPage.classList.add('hide')
         gameContainer.classList.remove('hide')
@@ -133,6 +136,8 @@ const main = {
 
         if (cardOne.imageId === cardTwo.imageId) {
             successSound.play()
+            const successContainer = document.getElementById('tick-container')
+            successContainer.style.display = 'block'
             const tickElement = document.getElementById('tick-container')
             const triggerElement = document.getElementById('trigger')
             tickElement.style.zIndex = 200
@@ -166,7 +171,6 @@ const main = {
     stop: () => {
         cards = []
         clearInterval(main.timeCounter)
-        console.log('limpio')
     },
 }
 

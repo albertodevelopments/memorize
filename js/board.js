@@ -3,8 +3,6 @@ const board = {
         cards = []
         const level = document.getElementById('select-level').value
 
-        console.log('level', level)
-
         // Creamos dinámicamente las tarjetas
         gameContainer.classList.add('hide')
         switch (level) {
